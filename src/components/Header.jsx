@@ -10,7 +10,7 @@ export default function Header({ activeView, onViewChange }) {
           className="flex items-center gap-3"
         >
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Vijaya Clinics Logo"
             className="h-14 w-14 rounded-full object-contain shadow-md"
           />
@@ -29,11 +29,10 @@ export default function Header({ activeView, onViewChange }) {
           <button
             type="button"
             onClick={() => onViewChange('patient')}
-            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${
-              activeView === 'patient'
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${activeView === 'patient'
                 ? 'bg-white text-cyan-800 shadow'
                 : 'text-slate-600 hover:text-cyan-800'
-            }`}
+              }`}
           >
             <Activity size={17} />
             Patient
@@ -42,11 +41,10 @@ export default function Header({ activeView, onViewChange }) {
           <button
             type="button"
             onClick={() => onViewChange('admin')}
-            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${
-              activeView === 'admin'
+            className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${activeView === 'admin'
                 ? 'bg-white text-cyan-800 shadow'
                 : 'text-slate-600 hover:text-cyan-800'
-            }`}
+              }`}
           >
             <LockKeyhole size={17} />
             Doctor
